@@ -22,7 +22,7 @@ body{
       /* Add your specific styles for when vw is smaller than vh */
       .wrapper{
         position: relative;
-        width: 90%;
+        height: 90%;
         min-width: 500px;
         aspect-ratio: 1/1;
         box-sizing: border-box;
@@ -38,7 +38,7 @@ body{
   @media (max-width: 100vh) and (max-height: 100vw) {
       .wrapper{
           position: relative;
-          height: 90%;
+          width: 90%;
           min-width: 500px;
           aspect-ratio: 1/1;
           box-sizing: border-box;
