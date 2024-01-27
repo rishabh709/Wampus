@@ -2,12 +2,14 @@ const wrapper = document.querySelector(".wrapper");
 let vh = window.innerHeight;
 let vw = window.innerWidth;
 let min;
-if(vh<vw)
-    min = vh;
-else
-    min = vw;
-wrapper.setAttribute("style", "width:"+min+"px");
-wrapper.setAttribute("style", "height:"+min+"px");
+if(vh<vw){
+    wrapper.setAttribute("style", "height: 80dvh");
+    wrapper.setAttribute("style", "width: 80dvh");
+}
+else{
+    wrapper.setAttribute("style", "width: 80dvw");
+    wrapper.setAttribute("style", "height: 80dvw");
+}
 
 console.log('all set and go');
 console.log(vh, vw);
