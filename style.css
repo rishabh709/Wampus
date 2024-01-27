@@ -4,7 +4,8 @@
 }
 body{
     background: #1d1d1d;
-    font-family:fantasy;
+    font-family:'fantasy', 'monospace';
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 .container{
     height: 100dvh;
