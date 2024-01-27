@@ -2,14 +2,21 @@ const wrapper = document.querySelector(".wrapper");
 let vh = window.innerHeight;
 let vw = window.innerWidth;
 let min;
+let s = Math.min(vh, vw)*1;
 if(vh<vw){
-    wrapper.setAttribute("style", "height: 80dvh");
-    wrapper.setAttribute("style", "width: 80dvh");
+    wrapper.setAttribute("style", "height: 90dvh");
+    wrapper.style.fontSize = 5+"dvh";
+    console.log("height one");
+
 }
 else{
-    wrapper.setAttribute("style", "width: 80dvw");
-    wrapper.setAttribute("style", "height: 80dvw");
+    wrapper.setAttribute("style", "width: 90dvw");
+    wrapper.style.fontSize = 5+"dvw";
+    console.log("width one");
 }
+console.log("the size of font should be", s);
+// wrapper.setAttribute("style", "font-size: "+s+"px");
+
 
 console.log('all set and go');
 console.log(vh, vw);

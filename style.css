@@ -74,18 +74,15 @@ img{
 }
 
 .result{
-    height: 25%;
-    width: 45%;
+    width: max-content;
     box-sizing: border-box;
     overflow: hidden;
-    font-size: 150%;
     position: absolute;
     z-index: 2;
     visibility: hidden;
     text-align: center;
     align-self: center;
     display: flex;
-    user-select: none;
     flex-direction: column;
     background-color: #1d1d1d;
     /* background-color: #db4545; */
@@ -105,7 +102,6 @@ img{
 
 #retryBtn{
     flex-grow: 1;
-    font-size: large;
     display: flex;
     justify-content: center;
     flex-direction: column;
