@@ -1,3 +1,20 @@
+const wrapper = document.querySelector(".wrapper");
+let vh = window.innerHeight;
+let vw = window.innerWidth;
+let min;
+if(vh<vw)
+    min = vh;
+else
+    min = vw;
+wrapper.setAttribute("style", "width:"+min+"px");
+wrapper.setAttribute("style", "height:"+min+"px");
+
+console.log('all set and go');
+console.log(vh, vw);
+
+
+
+
 class Room{
 
     static currentRoom;
