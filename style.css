@@ -85,6 +85,7 @@ img{
     text-align: center;
     align-self: center;
     display: flex;
+    user-select: none;
     flex-direction: column;
     background-color: #1d1d1d;
     /* background-color: #db4545; */
