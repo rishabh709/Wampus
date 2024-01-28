@@ -37,21 +37,13 @@ class Room{
         this.curtain = document.createElement('button');
         this.curtain.className = "curtain";
         this.div.className = "box";
-        // this.curtain.addEventListener("click", this.addJob(Event));
-
 
         this.curtain.addEventListener("click", (e)=>{
-            this.walk(e);
-            Game.checkState(e, this);
-        } );
+            if(this.walk(e))
+                Game.checkState(e, this);
+        });
         //add defulat class for styles
     }
-
-    async addJob(e){
-            await this.walk(e);
-            Game.checkState(e, this);         
-    }
-
 
     getNeighbours(currentPosition = this.i){
         let x = Math.floor(currentPosition/4);
@@ -110,24 +102,27 @@ class Room{
 
     }
 
-    async walk(e){
+    walk(e){
         let reachableRooms = this.getNeighbours(this.constructor.currentRoom);
         // console.log(e);
         // console.log("reachable ne: ", reachableRooms);
 
         if(reachableRooms.includes(this.i)){
             //pulling the clicked box curtain and then rolling back the previous curtain;
-            await this.pullCurtain();
-            await this.constructor.currentRoomDiv.rollCurtain();
+            this.pullCurtain();
+            this.constructor.currentRoomDiv.rollCurtain();
             this.constructor.currentRoom = this.i;
             this.constructor.currentRoomDiv = this;
+            return true;
         }
+        else
+            return false;
     }
-    async pullCurtain(){
+    pullCurtain(){
         this.curtain.style.background = "transparent";
         //unhide with html-css element
     }
-    async rollCurtain(){
+    rollCurtain(){
         this.curtain.style.background = "#4F518C";
     }
     get currentPosition(){
@@ -176,7 +171,7 @@ class Game{
         if(room.occupies == "monster" || room.occupies == "pit"){
             this.disableCurtains();
             document.querySelector("#resultLabel").textContent = "Game Lost";
-            setTimeout(function(){Game.resultBox.style.visibility = 'visible';}, 750);
+            setTimeout(function(){Game.resultBox.style.visibility = 'visible';}, 500);
             
         }else if(room.occupies == "gold"){
             document.querySelector("#resultLabel").textContent = "Treasure";
