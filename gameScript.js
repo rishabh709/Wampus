@@ -216,6 +216,7 @@ class Game{
         }
         Room.currentRoomDiv = palace[12];
         Room.currentRoom = 12;
+        Room.currentRoomDiv.curtain.textContent = "START";
         
         return palace;
     }
