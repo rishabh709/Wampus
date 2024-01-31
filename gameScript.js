@@ -1,25 +1,14 @@
 const wrapper = document.querySelector(".wrapper");
 let vh = window.innerHeight;
 let vw = window.innerWidth;
-let min;
-let s = Math.min(vh, vw)*1;
 if(vh<vw){
     wrapper.setAttribute("style", "height: 90dvh");
     wrapper.style.fontSize = 5+"dvh";
-    console.log("height one");
-
 }
 else{
     wrapper.setAttribute("style", "width: 90dvw");
     wrapper.style.fontSize = 5+"dvw";
-    console.log("width one");
 }
-console.log("the size of font should be", s);
-// wrapper.setAttribute("style", "font-size: "+s+"px");
-
-
-console.log('all set and go');
-console.log(vh, vw);
 
 
 
@@ -42,7 +31,6 @@ class Room{
             if(this.walk(e))
                 Game.checkState(e, this);
         });
-        //add defulat class for styles
     }
 
     getNeighbours(currentPosition = this.i){
@@ -71,17 +59,12 @@ class Room{
 
     allocate(obj="gold"){
         this.occupies = obj;
-        // neighbours = this.getNeighbours();
-        console.log(obj+": "+this.i);
-        if(obj=='monster'){
+        if(obj=='monster')
             this.div.style.backgroundImage = "url(images/monster.png)"
-        }
-        else if(obj=='pit'){
+        else if(obj=='pit')
             this.div.style.backgroundImage = "url(images/pit.png)"
-        }
-        else{
+        else
             this.div.style.backgroundImage = "url(images/treasure.png)"
-        }
     }
 
     placeHints(room, palace){
@@ -104,11 +87,8 @@ class Room{
 
     walk(e){
         let reachableRooms = this.getNeighbours(this.constructor.currentRoom);
-        // console.log(e);
-        // console.log("reachable ne: ", reachableRooms);
 
         if(reachableRooms.includes(this.i)){
-            //pulling the clicked box curtain and then rolling back the previous curtain;
             this.pullCurtain();
             this.constructor.currentRoomDiv.rollCurtain();
             this.constructor.currentRoom = this.i;
@@ -124,9 +104,6 @@ class Room{
     }
     rollCurtain(){
         this.curtain.style.background = "#4F518C";
-    }
-    get currentPosition(){
-        return currentRoomDiv;
     }
 }
 
@@ -148,7 +125,6 @@ class Game{
         //plant obstacles   workingOn
         //plant hints
 
-        console.log("start")
         const palace = this.buildPalace();
         Game.palace = palace;
         this.plantTreasure(palace);
@@ -159,14 +135,7 @@ class Game{
         location.reload();
     }
 
-    getObs(){
-        console.log(this.#obstacles);
-    }
-    
     static checkState(currentPosition, room){
-        // console.log("the obstacles");
-        // console.log(currentPosition.target);
-        // console.log(room);  
         Game.currentPosition = currentPosition;
         if(room.occupies == "monster" || room.occupies == "pit"){
             this.disableCurtains();
@@ -194,8 +163,6 @@ class Game{
 
         palace[loc].allocate();
         this.#validRooms.splice(indx, 1);
-        console.log("Treasure: "+loc);
-        console.log(this.#validRooms);
 
     }
     randInt(j, i=0){

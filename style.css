@@ -6,14 +6,11 @@
 @font-face {
     font-family: 'LilitaOne';
     src: url('./font/LilitaOne-Regular.ttf') format('truetype');
-    /* Add additional font formats if necessary */
   }
 
 body{
     background: #1d1d1d;
-    /* font-family:'monospace', 'sans-serif'; */
     font-family: LilitaOne;
-    /* font-family: 'Courier New', Courier, monospace; */
 }
 .container{
     height: 100dvh;
@@ -46,18 +43,13 @@ body{
     font-family: LilitaOne;
     font-size: inherit;
     
-    /* font-size: 40px; */
-    /* font-family: Arial, Helvetica, sans-serif; */
-    /* font-weight: bold; */
     color: #000000;
-    /* color: aliceblue; */
     display: grid;
     align-items: center;
     text-align: center;
     border: 2px solid #2C2A4A;
     background-color: #4F518C;
     z-index: 1;
-    /* visibility: hidden; */
 }
 /* box and .curtain are correctly placed */
 .box{
@@ -65,9 +57,7 @@ body{
     height: 25%;
     box-sizing: border-box;
     z-index: -1;
-    /* background-color: rgba(255, 255, 255, 0.486); */
     background-size: contain;
-    /* background-image: image('stink.png'); */
 }
 
 img{
@@ -78,8 +68,6 @@ img{
     position: relative;
     aspect-ratio: 1/1;
     width: 100%;
-    /* min-width: 500px; */
-    /* border: 2px solid white; */
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -97,7 +85,6 @@ img{
     display: flex;
     flex-direction: column;
     background-color: #1d1d1d;
-    /* background-color: #db4545; */
     border: 3px solid #242222;
     /* animation: swoop 2s alternate infinite ease-in-out ; */
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
@@ -117,7 +104,6 @@ img{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* background-color: rgb(86, 26, 165); */
     background-color: #db4545;
 }
 #resultLabel{
@@ -126,12 +112,3 @@ img{
     background-color: #1d1d1d;
     color: rgb(226, 205, 205);
 }
-
-/* .box:hover{
-    background-color: brown;
-} */
-
-/* .box:hover{
-    border: 4px solid brown;
-    background-color: transparent;
-} */
